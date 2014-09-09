@@ -9,6 +9,9 @@ package Synopsebot {
         if ($args->{body} eq 'synopsebot: botsnack!') {
             return "om nom nom"
         }
+        if ($args->{body} =~ m{S32/(\w+)\:(\d+)}) {
+            return "Link: http://perlcabal.org/syn/S32/$1.html#line_$2"
+        }
         if ($args->{body} =~ /S(\d\d)\:(\d+)/) {
             return
                 unless $2 <= 9999;
