@@ -12,7 +12,7 @@ class SynopsesBot {
                 return unless $<line> < 9999;
                 my $syn = $<subsyn> ?? "$<syn>/$<subsyn>" !! $<syn>;
                 my $name = $<line> ?? "line_" ~ $<line> !! $<entry>.trans(" " => "_");
-                $e.msg("Link: http://perlcabal.org/syn/$syn.html#$name");
+                $e.msg("Link: http://design.perl6.org/$syn.html#$name");
             }
             when / '#' (\d ** 5..*) / {
                 return unless 18400 <= $0 <= 200000;
