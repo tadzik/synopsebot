@@ -15,7 +15,7 @@ package Synopsebot {
             $syn .= "/$subsyn" if $subsyn;
             return "Link: http://perlcabal.org/syn/$syn.html#line_$line";
         }
-        if ($args->{body} =~ m{(S\d\d)(?:/(\w+))?\:((?:\s*\w+)+)}) {
+        if ($args->{body} =~ m{(S\d\d)(?:/(\w+))?\:((?:\s\w+)+)}) {
             my ($syn, $subsyn, $word) = ($1,$2,$3);
             for ($word) { s/^\s*//; s/ /_/g; }
             $syn .= "/$subsyn" if $subsyn;
