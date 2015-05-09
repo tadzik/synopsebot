@@ -44,7 +44,6 @@ class SynopsesBot {
             }
         }
 
-        say $e;
         Utterance.parse($e.what, :$actions)
             or die "Failed to parse '$e.what'";
     }
