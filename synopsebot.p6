@@ -32,7 +32,7 @@ class SynopsesBot {
             }
 
             method info:sym<Snn> ($/) {
-                return unless $<line> < 9999;
+                return unless $<entry> || $<line> < 9999;
                 my $syn = $<subsyn> ?? "$<syn>/$<subsyn>" !! $<syn>;
                 my $name = $<line> ?? "line_" ~ $<line> !! $<entry>.trans(" " => "_");
                 $e.msg("Link: http://design.perl6.org/$syn.html#$name");
